@@ -1,142 +1,47 @@
-# CS Student Portfolio 🚀
+# Portfolio — xdante68
 
-A modern, dark-themed portfolio website built with **Next.js 14**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**. Glassmorphism UI, smooth animations, and a fully data-driven architecture.
+Personal portfolio website yang dibangun dengan Next.js 16, menampilkan profil, pendidikan, organisasi, skills, project, sertifikat, dan galeri kegiatan.
 
-## ✨ Features
+> **Live Demo:** [https://nekyollas-portfolio.vercel.app/]
 
-- **Dark Mode Default** with glassmorphism cards & gradient accents
-- **Animated Hero** with typing effect & floating particles
-- **8 Sections**: Hero, About, Education, Organization, Skills, Projects, Certificates, Gallery
-- **Project Detail Pages** with `/projects/[slug]` routing
-- **Category Filtering** on Skills, Projects, Certificates, Gallery
-- **Command Palette** (⌘K / Ctrl+K) for quick navigation
-- **Lightbox** for Gallery & Project screenshots
-- **Certificate Modal** with verify & download actions
-- **Animated Counters, Progress Bars, Scroll Indicators**
-- **Responsive** — mobile, tablet, desktop
-- **Reading Progress Bar** at the top
-- **Back to Top** button
-- **Creative 404 Page** with terminal theme
-- **SEO Optimized** with full metadata
+---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Technology | Purpose |
-|-----------|---------|
-| Next.js 14 (App Router) | Framework |
-| TypeScript | Type safety |
-| Tailwind CSS v4 | Styling |
-| Framer Motion | Animations |
-| Lucide React | Icons |
+| Layer | Teknologi |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Bahasa | TypeScript |
+| Styling | TailwindCSS v4 + CSS custom properties |
+| Animasi | Framer Motion |
+| Icons | Lucide React + React Icons (Font Awesome) |
+| Arsitektur | Static Site Generation (SSG) — data-driven via file `.ts` |
+| Deployment | Vercel |
 
-## 📁 Project Structure
+---
 
-```
-├── app/
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Home (all sections)
-│   ├── not-found.tsx       # 404 page
-│   └── projects/[slug]/    # Project detail pages
-├── components/
-│   ├── layout/             # Navbar, Footer
-│   ├── sections/           # Hero, About, Education, etc.
-│   └── ui/                 # Reusable UI components
-├── data/                   # All content data files
-└── types/                  # TypeScript types
-```
+## Sections
 
-## 🚀 Quick Start
+| Section | Deskripsi |
+|---|---|
+| **Hero** | Nama besar, roles, bio card, foto profil, tombol Download CV + Contact Me, social links |
+| **About** | Bio panjang + Personal Details card (lokasi, email, universitas) |
+| **Education** | Timeline pendidikan — UNAIR + SMA, dengan GPA dan highlight |
+| **Organization** | Riwayat organisasi (OSIS, BEM FVokasi, BEM UNAIR, UNAIR Esports) dengan achievement |
+| **Skills** | Grid skill icons — semua skill backed oleh project nyata |
+| **Projects** | Project cards dengan thumbnail, tech stack badges, dan halaman detail per project (`/projects/[slug]`) |
+| **Certificates** | Sertifikat real — klik untuk modal LinkedIn-style dengan PDF preview + download |
+| **Gallery** | Masonry grid untuk foto kegiatan (KKN, lomba, proker, dll) |
 
-```bash
-# Install dependencies
-npm install
+---
 
-# Start dev server
-npm run dev
+## Fitur
 
-# Build for production
-npm run build
-```
-
-## ✏️ Customizing Your Data
-
-All content is in the `/data/` directory. **You never need to touch any component files** to update your content.
-
-### Profile (`data/profile.ts`)
-Update your name, title, bio, social links, etc.
-
-### Education (`data/education.ts`)
-Add/edit your educational history. Each entry has institution, degree, GPA, highlights.
-
-### Organizations (`data/organizations.ts`)
-Add your organizational experiences. Types: `himpunan`, `ukm`, `komunitas`, `external`.
-
-### Skills (`data/skills.ts`)
-Add skills with icons from [devicons CDN](https://devicon.dev/). Categories: `language`, `framework`, `database`, `tools`. Set `currentlyLearning: true` for skills you're learning.
-
-### Projects (`data/projects.ts`)
-Add projects with:
-- `slug` — used for the URL `/projects/[slug]`
-- `featured: true` — marks as featured
-- `category` — `web`, `mobile`, `ml`, `iot`, `other`
-- `status` — `completed`, `ongoing`, `archived`
-
-### Certificates (`data/certificates.ts`)
-Add certificates with issuer info, credential URLs, and optional PDF files.
-
-### Gallery (`data/gallery.ts`)
-Add photos with captions, dates, locations, and categories.
-
-## 🖼️ Adding Images
-
-Place images in the `/public/images/` directory:
-
-```
-public/
-├── images/
-│   ├── profile/photo.jpg        # Your profile photo
-│   ├── projects/*.jpg           # Project thumbnails
-│   ├── certificates/*.jpg       # Certificate images
-│   ├── education/*.png          # Institution logos
-│   ├── organizations/*.png      # Org logos
-│   └── gallery/*.jpg            # Gallery photos
-└── cv/cv.pdf                    # Your CV/resume
-```
-
-## 🎨 Customizing Theme
-
-Edit CSS variables in `app/globals.css`:
-
-```css
-:root {
-  --accent-cyan: #00f0ff;     /* Primary accent */
-  --accent-purple: #7c3aed;   /* Secondary accent */
-  --accent-blue: #06b6d4;     /* Tertiary accent */
-  --bg-dark: #0a0a0f;         /* Background */
-}
-```
-
-## ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| ⌘K / Ctrl+K | Open command palette |
-| ↑ ↓ | Navigate command palette |
-| Enter | Select item |
-| Esc | Close modal / palette |
-| ← → | Navigate lightbox images |
-
-## 📦 Deploy
-
-Deploy to Vercel:
-
-```bash
-npm run build
-npx vercel
-```
-
-Or push to GitHub and connect to [Vercel](https://vercel.com) for auto-deploys.
-
-## 📝 License
-
-MIT — feel free to use this for your own portfolio!
+- **Dark mode professional** — pure black (`#000`) + putih + neutral gray
+- **LinkedIn-style certificate modal** — PDF preview via iframe + tombol download
+- **Dynamic project detail pages** — SSG per project slug
+- **Responsive** — mobile-first layout
+- **SEO optimized** — static pages dengan meta tags yang rapi
+- **Data-driven** — semua konten di `data/*.ts`, tinggal edit file tanpa sentuh component
+- **Smooth animations** — Framer Motion scroll reveal + hover transitions
+- **Download CV** — langsung dari Hero section
