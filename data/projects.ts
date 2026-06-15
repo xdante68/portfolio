@@ -147,7 +147,7 @@ Key technical achievements include building a fully type-safe data layer with Ty
   thumbnail: "/images/projects/portfolio.png",
   techStack: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Vercel"],
   githubUrl: "https://github.com/xdante68/portfolio",
-  liveUrl: "https://xdante68-portfolio.vercel.app",
+  liveUrl: "https://nekyollas-portfolio.vercel.app/",
   period: "2026",
   teamSize: 1,
   role: "Developer",
