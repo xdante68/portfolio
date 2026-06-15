@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CS Student Portfolio 🚀
 
-## Getting Started
+A modern, dark-themed portfolio website built with **Next.js 14**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**. Glassmorphism UI, smooth animations, and a fully data-driven architecture.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Dark Mode Default** with glassmorphism cards & gradient accents
+- **Animated Hero** with typing effect & floating particles
+- **8 Sections**: Hero, About, Education, Organization, Skills, Projects, Certificates, Gallery
+- **Project Detail Pages** with `/projects/[slug]` routing
+- **Category Filtering** on Skills, Projects, Certificates, Gallery
+- **Command Palette** (⌘K / Ctrl+K) for quick navigation
+- **Lightbox** for Gallery & Project screenshots
+- **Certificate Modal** with verify & download actions
+- **Animated Counters, Progress Bars, Scroll Indicators**
+- **Responsive** — mobile, tablet, desktop
+- **Reading Progress Bar** at the top
+- **Back to Top** button
+- **Creative 404 Page** with terminal theme
+- **SEO Optimized** with full metadata
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| Next.js 14 (App Router) | Framework |
+| TypeScript | Type safety |
+| Tailwind CSS v4 | Styling |
+| Framer Motion | Animations |
+| Lucide React | Icons |
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Home (all sections)
+│   ├── not-found.tsx       # 404 page
+│   └── projects/[slug]/    # Project detail pages
+├── components/
+│   ├── layout/             # Navbar, Footer
+│   ├── sections/           # Hero, About, Education, etc.
+│   └── ui/                 # Reusable UI components
+├── data/                   # All content data files
+└── types/                  # TypeScript types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Start dev server
+npm run dev
 
-## Learn More
+# Build for production
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## ✏️ Customizing Your Data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All content is in the `/data/` directory. **You never need to touch any component files** to update your content.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Profile (`data/profile.ts`)
+Update your name, title, bio, social links, etc.
 
-## Deploy on Vercel
+### Education (`data/education.ts`)
+Add/edit your educational history. Each entry has institution, degree, GPA, highlights.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Organizations (`data/organizations.ts`)
+Add your organizational experiences. Types: `himpunan`, `ukm`, `komunitas`, `external`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Skills (`data/skills.ts`)
+Add skills with icons from [devicons CDN](https://devicon.dev/). Categories: `language`, `framework`, `database`, `tools`. Set `currentlyLearning: true` for skills you're learning.
+
+### Projects (`data/projects.ts`)
+Add projects with:
+- `slug` — used for the URL `/projects/[slug]`
+- `featured: true` — marks as featured
+- `category` — `web`, `mobile`, `ml`, `iot`, `other`
+- `status` — `completed`, `ongoing`, `archived`
+
+### Certificates (`data/certificates.ts`)
+Add certificates with issuer info, credential URLs, and optional PDF files.
+
+### Gallery (`data/gallery.ts`)
+Add photos with captions, dates, locations, and categories.
+
+## 🖼️ Adding Images
+
+Place images in the `/public/images/` directory:
+
+```
+public/
+├── images/
+│   ├── profile/photo.jpg        # Your profile photo
+│   ├── projects/*.jpg           # Project thumbnails
+│   ├── certificates/*.jpg       # Certificate images
+│   ├── education/*.png          # Institution logos
+│   ├── organizations/*.png      # Org logos
+│   └── gallery/*.jpg            # Gallery photos
+└── cv/cv.pdf                    # Your CV/resume
+```
+
+## 🎨 Customizing Theme
+
+Edit CSS variables in `app/globals.css`:
+
+```css
+:root {
+  --accent-cyan: #00f0ff;     /* Primary accent */
+  --accent-purple: #7c3aed;   /* Secondary accent */
+  --accent-blue: #06b6d4;     /* Tertiary accent */
+  --bg-dark: #0a0a0f;         /* Background */
+}
+```
+
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| ⌘K / Ctrl+K | Open command palette |
+| ↑ ↓ | Navigate command palette |
+| Enter | Select item |
+| Esc | Close modal / palette |
+| ← → | Navigate lightbox images |
+
+## 📦 Deploy
+
+Deploy to Vercel:
+
+```bash
+npm run build
+npx vercel
+```
+
+Or push to GitHub and connect to [Vercel](https://vercel.com) for auto-deploys.
+
+## 📝 License
+
+MIT — feel free to use this for your own portfolio!
