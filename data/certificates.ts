@@ -81,5 +81,14 @@ export const certificates: Certificate[] = [
     credentialId: "NVP7N4O4OZR0",
     credentialUrl: "https://www.dicoding.com/certificates/NVP7N4O4OZR0",
     pdfFile: "/certificate/ai-productivity.pdf",
+  },
+  {
+    id: "10",
+    title: "Belajar Machine Learning untuk Pemula",
+    issuer: "Dicoding Indonesia",
+    date: "Juny 2026",
+    credentialId: "2VX307RN4XYQ",
+    credentialUrl: "https://www.dicoding.com/certificates/2VX307RN4XYQ",
+    pdfFile: "/certificate/bmlp.pdf",
   }
 ];
