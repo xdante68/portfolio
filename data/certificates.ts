@@ -86,7 +86,7 @@ export const certificates: Certificate[] = [
     id: "10",
     title: "Belajar Machine Learning untuk Pemula",
     issuer: "Dicoding Indonesia",
-    date: "Juny 2026",
+    date: "June 2026",
     credentialId: "2VX307RN4XYQ",
     credentialUrl: "https://www.dicoding.com/certificates/2VX307RN4XYQ",
     pdfFile: "/certificate/bmlp.pdf",
